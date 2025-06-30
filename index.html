@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./src/output.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="bg-zinc-100 dark:bg-zinc-800 h-screen w-screen flex items-center  ">
+
+        <div
+            class="bg-slate-200 dark:bg-zinc-600 mx-auto md:w-[50%]  relative w-full h-fit rounded-2xl dark:text-white  flex flex-col gap-y-8 p-8  ">
+
+
+            <!-- ----------------------------------------------------------------------------------------------Generate Keypair -->
+            <form class=" w-full flex flex-col justify-center items-center  " onSubmit={handleSubmit}>
+
+                <div class="flex flex-col gap-y-2 w-[60%] bg-rd-500 ">
+                    <input id="publickey-readonly-input"
+                        class="dark:bg-slate-200 bg-zinc-300  outline-none dark:text-black px-2 py-1 rounded-md mr-2 "
+                        placeholder="public key" type="text"></input>
+
+                    <input id="privatekey-readonly-input"
+                        class="dark:bg-slate-200 bg-zinc-300  outline-none dark:text-black px-2 py-1 rounded-md mr-2 "
+                        placeholder="private key" type="text"></input>
+                    <button id="gen-keypair-btn"
+                        class="dark:bg-zinc-800 dark:text-white bg-zinc-800 text-white  md:text-base text-xs px-2 py-1 rounded-md hover:dark:bg-zinc-800/80 cursor-pointer ">Generate
+                        Keypair</button>
+
+                </div>
+
+            </form>
+            <!-- ------------------------------------------------------------------------------------Airdrop -->
+            <form class=" w-full flex justify-center   " onSubmit={handleSubmit}>
+                <input id="airdrop-input"
+                    class="dark:bg-slate-200 bg-zinc-300  w-[60%] outline-none dark:text-black px-2 rounded-md mr-2 "
+                    placeholder="wallet address" type="text"></input>
+                <button id="airdrop-btn"
+                    class="dark:bg-zinc-800 dark:text-white bg-zinc-800 text-white  md:text-base text-xs px-2 py-1 rounded-md hover:dark:bg-zinc-800/80 cursor-pointer ">Airdrop
+                </button>
+            </form>
+            <!-- -------------------Check Wallet Balance -->
+
+            <form class=" w-full  flex justify-center  " onSubmit={handleSubmit}>
+                <input id="wallet-input"
+                    class="dark:bg-slate-200 bg-zinc-300  w-[60%] outline-none dark:text-black px-2 py-1 rounded-md mr-2 "
+                    placeholder="wallet address" type="text"></input>
+                <button id="check-btn"
+                    class="dark:bg-zinc-800 dark:text-white bg-zinc-800 text-white  md:text-base text-xs px-2 py-1 rounded-md hover:dark:bg-zinc-800/80 cursor-pointer ">Check
+                    Balance</button>
+            </form>
+            <p id="balance-text" class="dark:text-white text-zinc-800 text-base font-medium ">You balance for wallet
+                ${walletAddress} is
+                ${balance}</p>
+
+
+            <div class="bg-re-500 absolute bottom-4  right-4 ">
+                <!-- <label for="dark-mode">Dark Mode</label> -->
+                <select
+                    class="text-black dark:bg-zinc-500 px-1 py-1 text-xs rounded-md dark:text-white outline-none  backdrop-blur-xl"
+                    name="" id="dark-mode">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
